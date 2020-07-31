@@ -26,8 +26,8 @@
 
             //$this->Main_model->read();
         {
-            if(!empty($id)){
-                $data = $this->Course_model->read();
+            if($id==0){
+                $data = $this->Course_model->list();
             }else{
                 $data = $this->Course_model->read($id);
             }

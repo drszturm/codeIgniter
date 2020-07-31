@@ -19,15 +19,24 @@ class Course_model extends CI_Model
         }
 
 
-	public function read($id = 0){
+	public function read($id=0 ){
 
    
 	
-            if(!empty($id)){
-                $data = $this->db->get_where("courses", ['id' => $id])->row_array();
-            }else{
-                $data = $this->db->get("courses")->result();
-            }
+            
+             $data = $this->db->get_where("courses", ['id' => $id])->row_array();
+           
+
+       return $data;
+
+   }
+   	public function list(){
+
+   
+	
+          
+             $data = $this->db->get("courses")->result();
+         
 
        return $data;
 
