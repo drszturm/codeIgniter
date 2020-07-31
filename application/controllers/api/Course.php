@@ -43,6 +43,7 @@
         public function index_post()
         {
             $input = $this->input->post();
+            //exit(var_dump($input));
             $this->Course_model->insert($input);
          
             

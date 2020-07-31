@@ -46,31 +46,10 @@ class Course_model extends CI_Model
 
    public function insert($input){
 
-       
-
-       $this->name    = $data['name']; // please read the below note
-
-       $this->description  = $data['description'];
-
-       $this->mainimgpath = $data['mainimgpath'];
+     $this->db->insert('courses',$input);
 
 
-
-       if(   $this->db->insert('courses',$input))
-
-       {    
-
-           return 'Data is inserted successfully';
-
-       }
-
-         else
-
-       {
-
-           return "Error has occured";
-
-       }
+      
 
    }
 
