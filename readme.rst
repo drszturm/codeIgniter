@@ -1,70 +1,55 @@
-###################
-What is CodeIgniter
-###################
+Executar importar banco de dados abaixo antes de executar o codigo, servidor deve utilizar porta 8888 para ser compativel com frontend
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
 
-*******************
-Release Information
-*******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Tempo de geração: 31/07/2020 às 17:02
+-- Versão do servidor: 5.7.26
+-- Versão do PHP: 7.2.21
 
-**************************
-Changelog and New Features
-**************************
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+--
+-- Banco de dados: `ezoom`
+--
 
-*******************
-Server Requirements
-*******************
+-- --------------------------------------------------------
 
-PHP version 5.6 or newer is recommended.
+--
+-- Estrutura para tabela `courses`
+--
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+CREATE TABLE `courses` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` text NOT NULL,
+  `mainimagepath` varchar(256) NOT NULL,
+  `secondimg` varchar(64) NOT NULL,
+  `thirdimage` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-************
-Installation
-************
+--
+-- Despejando dados para a tabela `courses`
+--
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+INSERT INTO `courses` (`id`, `name`, `description`, `mainimagepath`, `secondimg`, `thirdimage`) VALUES
+(1, 'curso1', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum', 'http://localhost:8888/ezoom/images/curso1.png', 'http://localhost:8888/ezoom/images/curso1.png', 'http://localhost:8888/ezoom/images/curso1.png'),
+(2, 'curso2', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum', 'http://localhost:8888/ezoom/images/curso2.png', 'http://localhost:8888/ezoom/images/curso2.png', 'http://localhost:8888/ezoom/images/curso2.png'),
+(3, 'curso3', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum', 'http://localhost:8888/ezoom/images/curso3.png', 'http://localhost:8888/ezoom/images/curso3.png', 'http://localhost:8888/ezoom/images/curso3.png'),
+(4, 'curso4', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum', 'http://localhost:8888/ezoom/images/curso4.png', 'http://localhost:8888/ezoom/images/curso4.png', 'http://localhost:8888/ezoom/images/curso4.png'),
+(8, '\"teste\"', 'lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsumlorem ipsum lorem ipsum', 'http://localhost:8888/ezoom/images/curso4.png', 'http://localhost:8888/ezoom/images/curso4.png', 'http://localhost:8888/ezoom/images/curso4.png');
 
-*******
-License
-*******
+--
+-- Índices de tabelas apagadas
+--
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+--
+-- Índices de tabela `courses`
+--
+ALTER TABLE `courses`
+  ADD UNIQUE KEY `id` (`id`);
